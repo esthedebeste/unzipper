@@ -1,0 +1,4 @@
+{
+  // Compile directly to ESM
+  "typescript.preferences.importModuleSpecifierEnding": "js"
+}

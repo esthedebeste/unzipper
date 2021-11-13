@@ -1,0 +1,24 @@
+{
+	"name": "unzipper",
+	"version": "1.0.0",
+	"description": "Util service to get a file from a zip without having to download the zip manually",
+	"main": "dist/main.js",
+	"scripts": {
+		"start": "node ./dist/main.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc",
+		"dev": "tsm ./src/main.ts"
+	},
+	"type": "module",
+	"author": "tbhmens",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"tsm": "^2.1.4",
+		"typescript": "^4.4.4"
+	},
+	"dependencies": {
+		"filename2mime": "^1.3.0",
+		"undici": "^4.9.5"
+	}
+}

@@ -69,10 +69,7 @@ createServer(async (req, res) => {
 					.writeHead(404)
 					.end(`${pathInZip} doesn't exist in ${name(plainUrl)}`);
 			}
-			res.writeHead(200, {
-				"Content-Type": filename2mime.lookup(pathInZip),
-				"Content-Disposition": `attachment; filename="${name(pathInZip)}"`,
-			});
+			res.writeHead(200, { "Content-Type": filename2mime.lookup(pathInZip) });
 			createReadStream(outputFile).pipe(res);
 			res.on("close", async () => {
 				console.log(`Done! Sent`, pathInZip, "from", plainUrl);
@@ -81,4 +78,4 @@ createServer(async (req, res) => {
 			});
 		});
 	});
-}).listen(port, () => console.log(`Listening at http://localhost:${port}`));
+}).listen(port, () => console.log(`Listening at http://localhost:${port}/`));

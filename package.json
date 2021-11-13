@@ -7,6 +7,7 @@
 		"start": "node ./dist/main.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc",
+		"heroku-postbuild": "npx -y --package=typescript tsc",
 		"dev": "tsm ./src/main.ts"
 	},
 	"type": "module",

@@ -4,10 +4,12 @@ import { fileURLToPath } from "node:url";
 
 const env = key => process.env[key] || "";
 
+const here = fileURLToPath(new URL("..", import.meta.url));
 const extraPaths = [
-	fileURLToPath(new URL("..", import.meta.url)),
+	here,
 	process.cwd(),
 	join(process.cwd(), "7zip"),
+	join(here, "..", "vendor", "p7zip", "bin"),
 ];
 
 const fulfilled = <T>(
@@ -22,6 +24,7 @@ export async function find7z(): Promise<string[]> {
 	for (const dir of path) {
 		for (const ext of exts) {
 			possibilities.push(join(dir, "7z" + ext));
+			possibilities.push(join(dir, "7za" + ext));
 		}
 	}
 	const results = await Promise.allSettled(

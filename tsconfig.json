@@ -1,18 +1,17 @@
 {
-  "include": ["src"],
-  "compilerOptions": {
-    "target": "ES2019",
-    "module": "ESNext",
-    "outDir": "dist",
-    "baseUrl": "src",
-    "isolatedModules": true,
-    "downlevelIteration": true,
-    "noImplicitAny": false,
-    "noUnusedParameters": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "declaration": true
-  }
+	"include": ["src"],
+	"compilerOptions": {
+		"target": "ES2019",
+		"module": "ESNext",
+		"outDir": "dist",
+		"baseUrl": "src",
+		"isolatedModules": true,
+		"downlevelIteration": true,
+		"noImplicitAny": false,
+		"noUnusedParameters": true,
+		"skipLibCheck": true,
+		"moduleResolution": "node",
+		"forceConsistentCasingInFileNames": true,
+		"allowJs": true
+	}
 }

@@ -14,7 +14,7 @@ const sevens = await find7z();
 const seven = sevens[0];
 if (seven == null) throw new Error("7z not found");
 console.log("Found 7z at", seven);
-const name = (file: string) => file.split("/").pop();
+const name = (file: string) => file.slice(file.lastIndexOf("/") + 1);
 
 createServer(async (req, res) => {
 	const purl = new URL(req.url, "http://" + req.headers.host);
